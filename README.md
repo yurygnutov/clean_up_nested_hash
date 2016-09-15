@@ -1,1 +1,1 @@
-# ruby_nested_dict_diff
+# Clean up nested Hash with given list of keys
