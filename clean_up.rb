@@ -11,10 +11,12 @@ def clean_up(document, what)
         document[key] = clean_up(value, what)
 
       elsif value.class == Array
-        value.each do |sd|
+        document[key] = value.map do |sd|
 
           if [Hash, Array, BSON::Document].include? sd.class
             document[key] = clean_up(sd, what)
+          else
+            sd
           end
         end
       end
